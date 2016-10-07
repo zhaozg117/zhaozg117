@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS-面向对象</title>
+    <script src="../lib/jquery-1.4.2.js"></script>
+    <style type="text/css">
+        p{
+            /*background:green;*/
+            border:1px;
+        }
+        span{
+            background:blue;
+            border:1px;
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    JS中没有专门的类，一般是习惯于将原型对象称之为类；<br/>
+    js中对象的属性可以动态添加，没有类型限制<br/>
+
+    类（原型对象）是抽象的，一类事物的代表，对象是实体的，具体的个体，对象是一类为模版创建的。<br/>
+
+</p>
+<div>
+    创建对象有五种方式
+    <p>工厂方法：即为使用new Object方法创建对象并添加相关数学</p>
+    <span id="sp_1">使用构造函数来定义类（原型对象）</span>
+    <p>使用prototype</p>
+    <p>构造函数和原型混合模式</p>
+    <p>动态原型模式</p>
+    <span id="sp_2">成员函数</span>
+
+    <span id="sp_3">prototype添加成员函数</span>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#sp_1").click(function(){
+            function A(){
+                this.name="abc";
+                var age=123;
+            }
+            var a=new A();
+//        alert(a.constructor);
+//        alert(typeof a);
+//        alert(A.constructor);
+            alert(a.name);
+            var b="1334";
+//        alert(b.constructord);
+//        alert(typeof b);
+        });
+
+        $("div span:eq(1)").click(function(){
+            function Person(){
+                this.name="abc1";
+                this.age=13;
+            }
+
+            function show(){
+                alert("hello"+this.name)
+            }
+
+            var per=new Person();
+            per.abc=show;
+//             per.abc();
+//            show();
+        });
+
+        $("#sp_3").click(function(){
+            function Person(){
+                this.name="abc1";
+                this.age=13;
+                this.hide=function(){
+                    alert("hide+"+this.age);
+                };
+            }
+
+            Person.prototype={
+                show:function(){
+                  alert("hello+"+this.name)
+                },
+            }
+
+            Person.show3=function(){
+                alert(this.name+"\n"+this.age);
+            }
+
+            var p1=new Person();
+            var p2=new Person();
+            alert(p1.show===p2.show);
+            alert(p2.hide==p1.hide);
+            p1.show();
+            p2.show();
+            Person.show3();
+        });
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box{
+            display: flex;
+            width: 210px;
+            height: 210px;
+            margin: 20px;
+            border: 5px solid #8f8f8f;
+            border-radius: 5px;
+            /*flex-direction: column; row|row-reverse|column|column-reverse */
+            /*flex-wrap: wrap; nowrap wrap-reverse */
+            /*justify-content:center;  !*lex-start | flex-end | center | space-between | space-around;*!*/
+            /*align-items: center;  !*flex-start | flex-end | center | baseline | stretch;*!*/
+        }
+        .box#box1{
+            flex-flow: row wrap;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        .box#box2{
+            flex-flow: row;
+            justify-content: space-between;
+            /*align-items: flex-end;*/
+        }
+        #box2 .itme:nth-child(2){
+            align-self: flex-end;
+        }
+
+        #box3{
+            justify-content: space-between;
+            align-items: center;
+        }
+       /* #box3 .itme:nth-child(2){
+            align-self: center;
+            align-items: center;
+        }
+
+        #box3 .itme:nth-child(3){
+            align-self: flex-end;
+        }*/
+        #box4{
+            flex-direction: column;
+            align-items: center;
+        }
+        #box5{
+            flex-flow: column wrap;
+            justify-content:space-between;
+            align-content: flex-start;
+        }
+        #box6{
+            justify-content: space-between;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        span{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: black;
+            margin: 0;
+        }
+        #odiv2{
+            display: flex;
+            width: 210px;
+            height: 210px;
+            margin: 20px;
+            border: 5px solid #8f8f8f;
+            border-radius: 5px;
+            flex-flow: column;
+            justify-content: space-between;
+            /*flex:1;*/
+        }
+        #header,#footer{
+            height: 20px;
+            /*flex: 1;*/
+            background: #e0e0e0;
+        }
+        .HolyGrail-body{
+            display: flex;
+            flex: 1;
+        }
+        .HolyGrail-content{
+            flex: 1;
+            text-align: center;
+            background: #ff00ff;
+        }
+        .HolyGrail-nav{
+            order: -1;
+            width: 30px;
+             background: #00b3ee;
+        }
+        .HolyGrail-ads{
+            width: 30px;
+            background: #3071a9;
+        }
+    </style>
+</head>
+<body>
+<div id="box1" class="box">
+    <span class="itme"></span>
+</div>
+
+<div id='box2'class="box">
+    <span class="itme"></span>
+    <span class="itme"></span>
+</div>
+
+<div id='box3'class="box">
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+</div>
+<div id='box4'class="box">
+        <span class="itme"></span>
+        <span class="itme"></span>
+        <span class="itme"></span>
+       <span class="itme"></span>
+
+</div>
+
+<div id='box5'class="box">
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+</div>
+
+<div id='box6'class="box">
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+    <span class="itme"></span>
+</div>
+
+
+<div id="odiv2">
+    <header id="header">头部</header>
+    <div class="HolyGrail-body">
+        <main class="HolyGrail-content">center</main>
+        <nav class="HolyGrail-nav">left</nav>
+        <aside class="HolyGrail-ads">right</aside>
+    </div>
+    <footer id="footer">底部</footer>
+</div>
+</body>
+</html>

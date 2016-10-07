@@ -1,0 +1,36 @@
+
+XMLDOM
+获取节点：
+    1 getElementsByTagName(""); 返回节点列表
+    2 getAttribute("");  返回元素属性的值
+    3 getAttributeNode("")  返回属性节点
+设置节点
+    nodeValue
+    setAttribute("属性","值");
+删除节点
+    removeChild(y) 删除指点元素
+    removeAttribute(name) 方法用于根据名称删除属性节点。
+替换节点
+    repalceChild(newNode,oldNode)  方法用于替换节点。
+    replaceData() 方法有三个参数：
+        offset - 在何处开始替换字符。Offset 值以 0 开始。
+        length - 要替换多少字符
+        string - 要插入的字符串
+    nodeValue 用来替换文本节点中数据会更加容易。
+创建节点：
+    createElement("div")  创建新的元素节点：
+    createAttribute("属性") 用于创建新的属性节点：
+    setAttribute() 可以在属性不存在的情况下创建新的属性，我们可以使用这个方法来创建新属性。
+    createTextNode() 方法创建新的文本节点：
+    createCDATASection() 方法创建一个新的 CDATA section 节点。
+    createComment() 方法创建一个新的注释节点。
+插入节点：
+    appendChild();   方法向已存在的节点添加子节点。
+    insertBefore(newNode,y);  方法用于在指定的子节点之前插入节点。
+    nsertData() 方法将数据插入已有的文本节点中。
+        insertData() 方法有两个参数：
+        offset - 在何处开始插入字符（以 0 开始）
+        string - 要插入的字符串
+克隆节点：
+        cloneNode() 方法创建指定节点的副本。
+        cloneNode() 方法有一个参数（true 或 false）。该参数指示被复制的节点是否包括原节点的所有属性和子节点。

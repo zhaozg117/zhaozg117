@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style>
+        div{
+            position: relative;
+            width: 200px;
+            height:200px;
+            font:40px/60px Microsoft Yahei;
+            text-align: center;
+            background: #00b3ee;
+            animation:first 5s  infinite;
+        }
+        @keyframes first{
+            0%{background: #00b3ee;left:0px;top:0px;border-radius: 0%;}
+            25%{background:red;left: 200px;top:0px;border-radius: 10%;}
+            59%{background:blue;left: 200px;top:200px;border-radius: 20%; }
+            75%{background:yellow;left: 0px;top:200px;border-radius: 40%;}
+            100%{background: green;left: 0px;top:0px;border-radius: 50%;}
+        }
+    </style>
+</head>
+<body>
+<div>CSS3.0</div>
+</body>
+</html>

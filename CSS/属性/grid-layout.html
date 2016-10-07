@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grid-layout</title>
+    <style>
+        section {
+            display: -ms-grid;
+            grid-columns: 150px 1fr 200px;
+            grid-rows: 50px 1fr 50px;
+        }
+
+        section header {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        section nav {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        section article {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        section aside {
+            grid-column: 3;
+            grid-row: 2;
+        }
+
+        section footer {
+            grid-column: 2;
+            grid-row: 3;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <header>Title</header>
+    <nav>Menu</nav>
+    <article>Content</article>
+    <aside>Notes</aside>
+    <footer>Footer</footer>
+</section>
+</body>
+</html>

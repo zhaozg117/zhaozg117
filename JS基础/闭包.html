@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+    <script src="../lib/jquery-1.4.2.js"></script>
+</head>
+<body>
+<form>
+    <input type="button" id="btn1" value="闭包1">
+    <input type="button" id="btn2" value="闭包2">
+</form>
+
+<script>
+    var name="window";
+    console.log(window.name)
+
+
+    window.onload = function () {
+        $("#btn1").click(function () {
+            var obj = {
+                name: "MyObject",
+                result: function () {
+                    return function () {
+                        return this.name;
+                    }
+                }
+            };
+            alert(obj.result()());
+        });
+
+
+
+/*
+
+        $("#btn2").click(function(){
+            var name="name";
+            var obj={
+                name:"MyObject",
+                result:function(){
+                    var  _this=this
+                    return function(){
+                        return _this.name;
+                    }
+                }
+            };
+            alert(obj.result()());
+        });
+*/
+
+
+    };
+</script>
+</body>
+</html>

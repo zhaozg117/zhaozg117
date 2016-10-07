@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js变量</title>
+    <script src="../lib/jquery-2.2.4.js"></script>
+
+</head>
+<body>
+<p>
+    变量的数据类型：
+    1.基本数据类型
+        string
+        number
+        boolean
+    <br/>
+    2.复合数据类型
+        array
+        object
+    <br/>
+    3.特殊数据类型
+        null
+        undefined
+    <br/>
+  </p>
+<p>
+    3.	快速与&&和快速或||
+    True&&a 直接返回a的值，false&&b则返回false 例如alert(3&&4) 结果是4，(false&&3)结果是false。
+    <br/>
+    True||a  返回true false||b则返回b的值。
+    <br/>
+    4.	!! 是快速转换成boolean类型的方法。
+
+</p>
+<span id="span1">点击测试||</span>
+
+<script>
+    var a="111",b= 10,c="sss"
+    //        alert(b+a==3111);
+    d=b+a
+    //        alert( d);
+    //        alert(true<=false)
+    //        alert(true&&d);
+    //        alert(0||5)
+    //        alert(false&&4);
+    //        alert(9==="9");
+    /*var val=window.prompt("qignshuru"),
+     va2=window.prompt("sfhuru2");
+     document.writeln(val+va2);*/
+    $(document).ready(function(){
+        var span1=document.getElementById("span1");
+        span1.onclick=function(){
+//            alert(0||false||0);
+           // alert(0||4||0);
+       //     alert(60>>2);
+            alert(1&&true&&"sfd"&&9);
+        };
+    });
+    $(function($){
+
+    });
+</script>
+</body>
+</html>

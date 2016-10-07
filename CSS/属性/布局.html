@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>布局</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+      /*  #container{
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            left: 50%;
+            top:50%;
+            margin: -100px 0 0 -100px;
+            border: 1px solid #ff00ff;
+            !*background-color: #00A000;*!
+        }*/
+
+        #container{
+            position:absolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            margin:auto;
+            float: left;
+            width: 80%;
+            height: 80%;
+            border: 1px solid #00ff00;
+        }
+
+        /*.left{
+            !*position: relative;*!
+            width: 100%;
+            height: 100%;
+            float: right;
+            background:#ff00ff;
+        }
+        .right{
+            position: relative;
+            width: 300px;
+            height:100% ;
+            background-color: #00A000;
+            text-align: center;
+            !*margin-bottom: 100px;*!
+        }
+        .right a{
+            position: absolute;
+            margin-top:100px;
+        }*/
+
+        .left{
+            width: 200px;
+            height: 100%;
+            float: right;
+            /*margin-left: -150px;*/
+            background-color: #00A000;
+
+        }
+
+        .right{
+            width: 100%;
+            height: 100%;
+            background: #ff00ff;
+        }
+
+        .outer{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #0d3349;
+        }
+        .inner{
+            position: relative;
+            width: 100px;
+            height:100px;
+            left:50px;
+            background-color: #FC9836;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="left"><a href="#">嘿嘿嘿</a></div>
+    <div class="right"><a href="#">哈哈哈</a></div>
+</div>
+
+<div class="outer">
+    <div class="inner"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>showImg</title>
+    <script src="../lib/jquery-1.4.2.min.js"></script>
+    <link rel="stylesheet" href="css/show.css">
+</head>
+<body>
+<div id="container">
+    <div class="header">
+        <div class="btn">
+            <button>add</button>
+            <button>Replace</button>
+            <button>Remove</button>
+        </div>
+
+    </div>
+    <div class="left">
+        <ul class="imglist">
+            <!--<li><img src="img/001.jpg" alt=""></li>-->
+        </ul>
+    </div>
+    <div class="right">
+        <div><h3>Cat1:</h3><ul class="cat1"></ul></div>
+        <div><h3>Cat2:</h3><ul class="cat2"></ul></div>
+        <div><h3>Cat3:</h3><ul class="cat3"></ul></div>
+    </div>
+    <div style="clear: both"></div>
+    <input type="text"/>
+</div>
+<script>
+    $(document).ready(function(){
+        function addImg(n){
+            var ohtml=""
+            for(var i=0;i<n;i++){
+                ohtml+="<li class='imgli'><img src='img/003.jpg' alt='图片'><div><h5>beijing</h5><img src='img/ok.png'><b>$9.99</b></div></li>"
+            }
+             $(".imglist").html(ohtml);
+        }
+        function addShu(){
+            var lis= $(".imglist li");
+            for(var i=0;i<lis.length-1;i++){
+                if((i+1)%6!==0||i==0){
+                    $(lis[i]).after("<li class='shu'><img src='img/001.jpg' alt='shu'></li> ");
+                }
+            }
+        }
+
+        function initRight(n,element){
+            var ohtml=""
+            for(var i=0;i<n;i++){
+                ohtml+="<li>shengzhen</li>"
+            }
+            $(element).html(ohtml);
+        }
+        addImg(19);
+        addShu();
+        initRight(6,$(".cat1"));
+        initRight(12,$(".cat2"));
+        initRight(12,$(".cat3"));
+
+        /*$(".imgli").click(
+                function(){
+                   if($(this).find("div img").css("visibility")=="hidden"){
+                       $(this).find("div img").css("visibility",'visible') ;
+                   }else{
+                       $(this).find("div img").css("visibility",'hidden') ;
+                   } ;
+                }
+        );*/
+
+        $(".imgli").toggle(
+                function(){
+                    $(this).find("div img").css("visibility",'visible');
+                    $(this).attr("checked","true");
+                },
+                function(){
+                    $(this).find("div img").css("visibility",'hidden');
+                    $(this).attr("checked","false");
+                }
+        );
+
+        $(".right li").toggle(
+                function(){
+                    $(this).attr("checked",'true').css("opacity",'.5');
+                },
+                function(){
+                    $(this).attr("checked",'false').css("opacity",'1');
+                }
+        );
+
+        $(".right li").click(function(){
+            if($(".right li[checked='true']")){
+                $(".right li[checked='true']").attr("checked",'false').css("opacity",'1');
+                $(this).attr("checked",'true').css("opacity",'.5');
+            }
+            else{
+                $(this).attr("checked",'true').css("opacity",'.5');
+            }
+        });
+
+        $(".btn button:eq(0)").click(function(){
+            if($(".right li[checked='true']").length>0){
+               /* var html="<li class='imgli'><img src='img/003.jpg' alt='图片'><div><h5>"
+                        +$(".right li[checked='true']").text()
+                        +"</h5><img src='img/ok.png'><b>$9.99</b></div></li>"*/
+                $(".imgli[checked='true']").each(function(){
+//                    alert(this.innerHTML);
+                    $(this).after(this);
+                });
+                $('.shu').remove();
+//                addShu();
+            }
+
+        });
+        $(".btn button:eq(1)").click(function(){
+            if($(".right li[checked='true']").length>0){
+                $(".imgli[checked='true']").find("h5").text($(".right li[checked='true']").text());
+            }else {
+               alert("请左方选择一个选项");
+            }
+
+        });
+        $(".btn button:eq(2)").click(function(){
+            if($(".imgli[checked='true']").length>0){
+                var s=$(".imgli[checked='true']").remove()
+                $('.shu').remove();
+                addShu();
+            }
+
+        });
+
+
+
+
+    });
+
+</script>
+</body>
+</html>

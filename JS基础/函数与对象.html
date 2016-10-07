@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数与对象</title>
+    <script>
+
+//        (function(a){
+//            console.log(a);
+//            var a=10;
+//            function a(){};
+////            console.log(a);
+//        }(100))
+
+
+var name = "window";
+        var o = {
+            name : 'oo',
+            getName : function(){
+                console.log(this)
+                return function(){
+                    console.log(this);
+                }
+
+            }
+        };
+o.getName()();
+        function S(){}
+S.prototype={
+    show:function(){
+        console.log(1)
+    },
+}
+S.hide=function(){};
+        var s = new S();
+S.hide();
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+一：伸缩盒子(旧）
+    box-orient:horizontal|vertical|inline-axis|block-axis 项目排列方式
+    box-pack:start|end|center|justify   对齐方式
+    box-align:start|end|center|stretch|baseline
+    box-flex:number;
+    box-flex-group:integer 设置或检索伸缩盒对象的子元素的所属组。
+                           动态给数值较大的组分配其内容所需的实际空间（如无内容、padding、border则不占空间），剩余空间则均分给数值最小的那个组（可能有1个或多个元素）
+                           对应的脚本特性为boxFlexGroup。
+    box-ordinal-group:integer 设置或检索伸缩盒对象的子元素的显示顺序。数值较低的元素显示在数值较高的元素前面；相同数值的元素，它们的显示顺序取决于它们的代码顺序；
+    box-direction:normal|inverse
+    伸缩盒子(新）
+    flex-direction:row|row-reverse|column|column-inverse   项目排列方向
+    flex-wrap:nowrap|wrap|wraop-reverse 一行排列不下时是否换行，以及换行的方向
+    flex-flow:row nowrap 上面两个属性的符合写法
+    justify-content :lex-start | flex-end | center | space-between | space-around;
+                    属性定义了项目在主轴上的对齐方式。
+                    分别为左对齐，右对齐，居中对齐，两端对齐，左右间隔相等
+    align-items: flex-start | flex-end | center | baseline | stretch;
+                  属性定义项目在交叉轴上如何对齐。
+                  flex-start：交叉轴的起点对齐。
+                  flex-end：交叉轴的终点对齐。
+                  center：交叉轴的中点对齐。
+                  baseline: 项目的第一行文字的基线对齐。
+                  stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+    align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+                      属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+    order:<integer>
+    flex-grow:<number>属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+    flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+    flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余
+                空间。它的默认值为auto，即项目的本来大小。它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
+    flex:none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]属性是flex-grow, flex-shrink 和 flex-basis的简写，默
+                认值为0 1 auto。后两个属性可选。该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。
+    align-self:align-self : auto | flex-start | flex-end | center | baseline | stretch;
+                        属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元
+                        素的align-items属性，如果没有父元素，则等同于stretch。

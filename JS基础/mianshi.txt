@@ -1,0 +1,79 @@
+1 js中get和post两种请求方式的区别
+        1.post在传输数据时不会在url上显示，get在url传递，会被浏览器缓存。
+        2.get传输的数据量比较小
+        3post传输的数据在send（data）方法里传入
+2”==”和“===”的不同
+3：编写一个数组去重复的方法
+    //方法1
+    Array.prototype.unique=function(){
+           var obj={},arr=[];
+           for(var i=0;i<this.length;i++){
+               if(!obj[this[i]]){
+                   obj[this[i]]=true;
+                   arr.push(this[i]);
+               }
+           }
+           return arr;
+       };
+    //方法2  先排序再比较相邻的两个元素
+        Array.prototype.unique2=function(){
+            this.sort();
+            var arr=[this[0]];
+            for(var i=1;i<this.length;i++){
+                if(this[i]!=this[i-1]){
+                    arr.push(this[i]);
+                }
+            }
+            return arr;
+        };
+
+4：数组的排序
+    1.冒泡排序
+    for(var i=0;i<arr.length-1;i++){
+        for(var j=0;j<length-1-i;j++){
+             if(arr[j]>arr[j+1]){
+                var temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temP
+             }
+        }
+    }
+
+
+
+5解释jsonp的原理，以及为什么不是真正的ajax
+
+6：js的跨域问题
+    jsonp ;通过script标签的src属性引入一个可以执行的js文件，文件加载后会执行url后面的函数，并将返回的json数据以参数形式传入
+            jsonp只能是get请求。
+            <script>
+                function doSomething(jsondata){
+                    //处理返回的json数据
+                }
+            </script>
+            <script src="http://zhaozg:8081/ajax/ajaxjquery/jsonp.php?callback=doSomething"></script>
+     window.name:页面的url不同，window.name属性不会变，利用ifream的src属性
+     window.postMessage("shuju","目标域") 利用ifream的src属性
+
+
+7添加 删除 替换 插入到某个接点的方法
+appendChild();
+removeChild()
+replaceChild();
+insertBefor();
+
+8如何阻止事件冒泡和默认事件
+    e.preventDeault();
+   e.propagation
+   cancleBubble
+    returnValue=false
+9.闭包是什么，有什么特性，对页面有什么影响
+    函数内部返回一个函数表达式，使得函数外部可以访问内部的变量
+
+
+10.事件绑定
+11.浏览器检测
+
+12.js 的模块化
+
+12.正则表达式

@@ -1,0 +1,147 @@
+/*@import "../lib/bootstrap.min.css";*/
+@charset "utf-8";
+body{
+    margin: auto;
+    width: 100%;
+    height: auto;
+    font-size:13px;
+    font-family:"微软雅黑";
+    background: #fff;
+}
+/*.topbox{ margin:auto; width:100%; min-width:1200px; height:auto; display:block; clear:both; background-color:#FFF;}*/
+/*.content {min-width: 1200px;background-color: #fff; padding-bottom: 50px; color: #555}*/
+/*.foot{width:100%; min-width:1200px; height: auto; background-color:#FFF;}*/
+/*.service{ position:fixed; height:auto; bottom:50px; right:0; z-index:2147483646;width: 40px}*/
+.topbox{
+    /*margin: 20px;*/
+    width: 100%;
+    min-width:1200px;
+    height:auto;
+    display: block;
+    clear: both;
+    background: #fff;
+}
+.content{
+    min-width:1200px;
+    height: 800px;
+    background: #fff;
+}
+content:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+
+.footer{
+    width: 100%;
+    min-width:1200px;
+    height: 100px;
+    background: #fff;
+}
+.service{
+    position:fixed;
+    right: 0;
+    bottom: 50px;
+    width: 60px;
+    height: 280px;
+    z-index:2323233;
+    background: #00ff00;
+}
+.topbaner_all{
+    /*float: left;*/
+    width: 100%;
+    height: auto;
+    /*clear: both;*/
+    /*display: block;*/
+    background: #EFEFEF;
+}
+
+.topbanner {
+    margin: 0 auto;
+    width: 1200px;
+    height: 40px;
+    line-height: 30px;
+    /*float: left;*/
+}
+.topbanner .topbanner_welcome{
+    float: left;
+    line-height:28px; font-size:14px;font-family: "微软雅黑";color:#666;
+
+}
+.topbanner .topbanner_right{
+    float: right;
+    width: auto;
+    line-height:30px ;
+}
+
+#top{
+    margin:0 80px;
+    min-width: 1200px;
+    height: auto;
+    clear: both;
+    display:block;
+    /*float: left;*/
+    padding-bottom: 0;
+}
+
+#top .logo{
+    width:215px;
+    height:auto;
+    margin:0;
+    float:left;
+    /*display: inline;*/
+}
+
+
+#top .local{
+    margin-top: 44px;
+    width: 103px;
+    height: 50px;
+    margin-left: 20px;
+    position: relative;
+    float:left;
+    z-index: 9999;
+}
+#top .local .local_city{
+    width:103px;
+    height:50px;
+    position: relative;
+    display: inline;
+}
+
+
+#top .local .local_city a{
+    float: left;
+    width: 55px;
+    height: 40px;
+    position: relative;
+    cursor: auto;
+}
+
+#top .local .local_city a b{
+     float: left;
+     width: 85px;
+     height:24px;
+     line-height: 24px;
+     cursor: pointer;
+ }
+
+#top .local .local_city a b{
+    float: left;
+    width: 53px;
+    height:14px;
+    line-height: 14px;
+    cursor: pointer;
+}
+#top .top_center{
+    margin: 54px 0 0 15px;
+    width: 630px;;
+    height:auto;
+    float:left;
+}
+#top .top_tel{
+    margin-top:38px;
+    float:right;
+    display: inline;
+}
+
+
+.hide{
+    display: none;
+}

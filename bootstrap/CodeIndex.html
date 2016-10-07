@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>codeindex</title>
+    <link rel="stylesheet" href="bootstrap-3.0.0/css/bootstrap.min.css">
+    <script src="../lib/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<div class="container">
+   <span>Master:</span>
+    <select name="selSer" id="selServ"></select>
+    <span>Stage:</span>
+    <select name="selFeature" id="selFeature"></select>
+    </div>
+</body>
+
+<script>
+    var resp = [
+        {
+            "id" : 1,
+            "name" : "山西",
+            "city" : [{
+                "cid" : 1,
+                "name" : "太原",
+            }, {
+                "cid" : 2,
+                "name" : "临汾",
+            }
+            ],
+        },
+        {
+            "id" : 2,
+            "name" : "陕西",
+            "city" : [{
+                "cid" : 3,
+                "name" : "榆林",
+            }, {
+                "cid" : 4,
+                "name" : "西安",
+            }
+            ],
+        },
+    ];
+    var html='';
+    for(var i=0;i<resp.length;i++){
+        html+='<option value="'+ p.id+ '">'+ p.name+'</option>';
+        $("#selServ").html(html);
+    }
+
+    function showDit(){
+
+    }
+</script>
+</html>

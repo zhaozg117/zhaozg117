@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串</title>
+    <script src="../lib/jquery-1.4.2.js"></script>
+    <style>
+        span{
+            border:1px;
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+<P>
+    数组是用于存放一组数据，js的数组存放的数据不限数据类型。它有方括号[]包围，以逗号，隔开<br/>
+    js中数组是引用传递<br>
+    var a=[1,"string",1.4];
+    <span id="sp_1">点击-数组传递类型</span>
+</P>
+
+<p>
+    js中数组会自动增长。
+    <span id="sp_2">数组动态增长 </span>
+</p>
+
+<p>
+    字符串的split()函数，返回一个数组。str.split(",",5) ","表示用逗号分割
+    <span id="sp_3">split函数 </span>
+</p>
+<p>
+    <span id="sp_4">数组排序</span>
+</p>
+
+<p>
+    <span id="sp_5">数组转置</span>
+</p>
+
+<p>
+    <span id="sp_6">字符串添加前导0</span>
+</p>
+
+    <script>
+   $(document).ready(function(){
+       $("#sp_6").click(function(){
+//            alert("0".repeat(3));
+           var arr=new Array(6);
+//           alert(arr.join(0));
+
+           alert(befor(6,"hpu"));
+       });
+   });
+
+     function befor(n,s){
+         if(n>s.length){
+             var be=new Array(n+1- s.length).join(0);
+         }
+         return be+s;
+     }
+</script>
+</body>
+</html>
