@@ -1,41 +1,82 @@
 -----------------------------------------------------------------HTML/CSS------------------------------------------------------------------------------------
 1、H5新标签、属性
 canvas audio video  datalist command  details   keygen  input新属性 （password  placeholder maxlength）
+
 2、什么是盒子模型？
 在网页中，一个元素占有空间的大小由几个部分构成，其中包括元素的内容（content），元素的内边距（padding），元素的边框（border），元素的外边距（margin）四个部分。
 这四个部分占有的空间中，有的部分可以显示相应的内容，而有的部分只用来分隔相邻的区域或区域。4个部分一起构成了css中元素的盒模型。
-3、行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
 
-行内元素：a、b、span、img、input、strong、select、label、em、button、textarea
-块级元素：div、ul、li、dl、dt、dd、p、h1-h6、blockquote
-空元素：即系没有内容的HTML元素，例如：br、meta、hr、link、input、img
+3、行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？
+	行内元素：a、b、span、img、input、strong、select、label、em、button、textarea
+	块级元素：div、ul、li、dl、dt、dd、p、h1-h6、blockquote
+	空元素：即系没有内容的HTML元素，例如：br、meta、hr、link、input、img
 
 4、 css 实现垂直水平居中
-	 （1）calc（）
-	 （2） flex
-	 （3）top left margin-top margin-left
+	 （1）绝对定位+margin：auto  position:absolute; margin:auto;top:0 ;
+	 （2） flex 父元素 display：flex;  align-items:center;  justify-content:center;
+	 （3） 绝对定位+transform反向偏移
+	  (4) 绝对定位+margin反向偏移
+	 （5） display：table
+	 
 5、简述一下src与href的区别
+	src会下载  href只是一个超链接
 
 6、px和em的区别
 	px固定宽度、em值不固定 浏览器默认16px 意味着默认1em=16px
+	
 7、浏览器的内核分别是什么?
 	IE: trident内核
 	Firefox：gecko内核
 	Safari：webkit内核
 	Opera：以前是presto内核，Opera现已改用Google Chrome的Blink内核
 	Chrome：Blink(基于webkit，Google与Opera Software共同开发
+	
 8、自适应布局
+	flex：0 1 auto； （flex-grow：0；flex-shrink：1；flex-basis:auto）
+	flex-flow:flex-direction:row;flex-wrap:nowrap;
+	align-itmes:center
+	justify-content:center | flex-start |flex-end| space-between |space-around
+	
 
 9、hack兼容
 
 10、清除浮动
+	父元素下添加空标签clear:both;
+	伪类：after；
 
 11、iframe的优缺点？
+		优点：a、页面无需刷新，直接加载进来
+			  b、嵌入页面比较方便
+			  c、跨域通信比较方便
+		缺点：多个页面不好管理、浏览器后退无效；增加http请求
 
 12、列举几种隐藏元素的方法
+	visibility·：hidden
+	display：none；
+	opacity:0
+	height:0;overflow:hidden;
+	
 13、如何让一段文本中的所有英文单词的首字母大写
+
 14、请简述CSS样式表继承
+	1、外部样式 link标签
+	2、内页样式：style标签
+	3、行内样式：标签style属性；
+	从CSS代码存放位置看权重优先级：内嵌样式 > 内部样式表 > 外联样式表；
+	从样式选择器看权重优先级：important > 内嵌样式 > ID > 类 > 标签 | 伪类 | 属性选择 > 伪对象 > 继承 > 通配符。
+		important的权重为1,0,0,0
+		ID的权重为0,1,0,0
+		类的权重为0,0,1,0
+		标签的权重为0,0,0,1
+		伪类的权重为0,0,1,0
+		属性的权重为0,0,1,0
+		伪对象的权重为0,0,0,1
+		通配符的权重为0,0,0,0
 15、请简述CSS的选择器
+		id选择器
+		类选择器
+		属性选择器
+		伪类选择器
 16、浏览器兼容性
 	a. 浏览器默认的margin和padding不同
 	b. IE6双边距bug
@@ -43,7 +84,9 @@ canvas audio video  datalist command  details   keygen  input新属性 （passwo
 	d. min-height在IE6下不起作用
 	e. 透明性IE用filter:Alpha(Opacity=60)，而其他主流浏览器用 opacity:0.6
 	f. input边框问题，去掉input边框一般用border:none;就可以，但由于IE6在解析input样式时的BUG(优先级问题)，在IE6下无效
-	
+17、样式伪类和伪对象
+		伪类：:active  :selected  :disabled  :checked   :first-child  :nth-child(1) :nth-of-type();
+		伪对象：::before  ::after  :;selection  ::first-line
 -----------------------------------------------------------------------JS------------------------------------------------------------------------------
 1、元素的创建、删除、查找节点
 	createDocumentFragment() 文档碎片   createElement（） createTextNode（）
@@ -51,27 +94,33 @@ canvas audio video  datalist command  details   keygen  input新属性 （passwo
 	getElementById() getElementByTagName() getElementByName() querySelector();
 
 2、可以对JavaScript中的5种主要的数据类型（包括Number、String、Object、Array、Boolean）进行值复制。
-
+	intanceof（Aarry）  循坏 递归
 3、array数组去重方法有哪些	
-		indexOf(arr[i])<0;
-		Obj key值去重复
+		1）双重for循坏
+		2）数组的indexOf(arr[i])<0;
+		3）数组的filter方法；
+		4）sort方法排序，比较相邻的两个
+		5）Obj key值去重复
 4、数组、字符串方法
-	  array：
-	  string：
+	  array：pop push  shift unshift splice concat  reverse sort join  toString
+	  string：slice split valueOf  toString toLowerCase toUpperCase  substr substring  indexOf  lastIndexOf conCat replace 
 
-5、Javascript中callee和caller的作用？	  
+5、Javascript中callee和caller 的作用？	  
 	 function.caller  调用该函数的函数
 	 arguments.callee 函数本身
+	
 6、cookies，sessionStorage和localStorage 、cacheStorage的区别
 		sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。
 		localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。
-	
 	    cookies每次请求都发送，大小4k，不能跨域
+		
 7、统计字符串中字母个数或统计最多字母数。
 
 8、jQuery的事件委托方法on、live、delegate之间有什么区别？
+	jquery9以后用on
 
 9、如何理解闭包？
+	
 
 10、 跨域请求资源的方法有哪些？
 
@@ -81,7 +130,15 @@ canvas audio video  datalist command  details   keygen  input新属性 （passwo
 
 13、事件模型及事件代理/委托
 
-14、手写Function.bind函数
+14、call apply  bind的相同不同之处手写Function.bind函数
+	var a={
+			user:"zhao",
+            fn:function(x,y){console.log(this.user);}			
+		}
+	var b=a.fn;
+	b.call(a,arg1,arg2...)
+	b.apply(a,[]);
+	b.bind(a,arg1,arg2...) 不会立即执行
 
 15、JS的定义提升
 
@@ -150,7 +207,13 @@ canvas audio video  datalist command  details   keygen  input新属性 （passwo
 		事件监听函数addEventListener()的第三个参数就是控制方法是捕获还是冒泡
 
 
-
+23：判断对象类型的方法
+	1）typeof  null {} [] 均输入object
+	2）Object.prototype.toString.call 
+	3）[].contructor==Array
+	4) obj intanceof Array  只能判断对象和数组
+	
+	
 -------------------------------------------------------------HTTP WEB安全 性能----------------------------------------------
 http：
 	一次完整的HTTP事务是怎样的一个过程？
@@ -169,6 +232,7 @@ http：
 算法
 	手写数组快速排序、冒泡排序，插入排序
 	JavaScript实现二分法查找
+	
 web安全
 	（1）XSS（Cross-Site Scripting，跨站脚本攻击）：指通过存在安全漏洞的Web网站注册用户的浏览器内运行非法的HTML标签或者JavaScript进行的一种攻击。
 	（2）SQL注入攻击
