@@ -7,6 +7,7 @@ module.exports = {
       { text: 'Home', link: '/' },
       { text: 'vue', link: '/guide/vue/vue2' },
       { text: '浏览器', link: '/guide/browse/' },
+      { text: '算法', link: '/guide/algorithm/' },
     ],
     sidebar: {
       '/guide/vue/': ['vue2', 'vue3'],
@@ -15,6 +16,13 @@ module.exports = {
           title: 'Typescript 学习',
           collapsable: true,
           children: ['render', 'cache'],
+        },
+      ],
+      '/guide/algorithm/': [
+        {
+          title: '算法学习',
+          collapsable: true,
+          children: ['backTrack', 'binarySearch'],
         },
       ],
     },
